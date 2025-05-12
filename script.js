@@ -1,4 +1,3 @@
-// Scroll suave para links do menu (se adicionar navegação depois)
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
