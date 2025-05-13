@@ -2,7 +2,6 @@
 
 Este projeto é uma landing page moderna, responsiva e funcional, desenvolvida para advogadas criminalistas. Criado com foco em conversão e navegabilidade, este site destaca serviços jurídicos de forma clara e objetiva.
 
-![Preview da página](https://raw.githubusercontent.com/gabrieladelucca/landing-advogada/main/assets/preview.jpg) 
 
 🔗 **Acesse o projeto online:** [gabrieladelucca.github.io/landing-advogada](https://gabrieladelucca.github.io/landing-advogada)
 
