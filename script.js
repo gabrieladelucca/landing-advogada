@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const data = new FormData(form);
 
-   try {
+    try {
       const response = await fetch(form.action, {
         method: form.method,
         body: data,
@@ -27,15 +27,20 @@ document.addEventListener("DOMContentLoaded", function () {
           'Accept': 'application/json'
         }
       });
-    
-      const result = await response.json();
-      console.log("Resposta do Formspree:", result);
-    
+
       if (response.ok) {
         status.textContent = "Mensagem enviada com sucesso!";
         status.className = "form-status success";
         form.reset();
       } else {
+        // Tenta ler a resposta, mas só se tiver conteúdo
+        let result;
+        try {
+          result = await response.json();
+        } catch {
+          result = {};
+        }
+
         status.textContent = result.error || "Erro ao enviar. Tente novamente.";
         status.className = "form-status error";
       }
@@ -44,7 +49,5 @@ document.addEventListener("DOMContentLoaded", function () {
       status.textContent = "Erro ao enviar. Tente novamente mais tarde.";
       status.className = "form-status error";
     }
-
-
   });
 });
