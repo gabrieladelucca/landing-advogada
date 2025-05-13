@@ -1,3 +1,4 @@
+/* RESET E BASE */
 * {
     margin: 0;
     padding: 0;
@@ -57,7 +58,10 @@
   color: #c19977;
 }
 
- 
+/* Empurrar o conteúdo para baixo do menu fixo */
+
+
+  
   .container {
     max-width: 960px;
     margin: 0 auto;
@@ -450,13 +454,4 @@
 .btn-topo:hover {
   background-color: #c19977;
   transform: scale(1.1);
-}
-.form-status.success {
-  color: green;
-  margin-top: 10px;
-}
-
-.form-status.error {
-  color: red;
-  margin-top: 10px;
 }

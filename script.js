@@ -1,3 +1,4 @@
+// Scroll suave para links do menu (se adicionar navegação depois)
 document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -10,44 +11,33 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
   });
 
-document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("meu-formulario");
-  const status = document.getElementById("form-status");
+const status = document.getElementById("form-status");
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+  const data = new FormData(form);
 
-    const data = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-
-      if (response.ok) {
-        status.textContent = "Mensagem enviada com sucesso!";
-        status.className = "form-status success";
-        form.reset();
-      } else {
-        // Tenta ler a resposta, mas só se tiver conteúdo
-        let result;
-        try {
-          result = await response.json();
-        } catch {
-          result = {};
-        }
-
-        status.textContent = result.error || "Erro ao enviar. Tente novamente.";
-        status.className = "form-status error";
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
       }
-    } catch (error) {
-      console.error("Erro no envio:", error);
-      status.textContent = "Erro ao enviar. Tente novamente mais tarde.";
-      status.className = "form-status error";
+    });
+
+    if (response.ok) {
+      status.textContent = "Mensagem enviada com sucesso!";
+      status.classList.add("success");
+      form.reset();
+    } else {
+      throw new Error();
     }
-  });
+  } catch (error) {
+    status.textContent = "Erro ao enviar. Tente novamente mais tarde.";
+    status.classList.add("error");
+  }
 });
+
+  
