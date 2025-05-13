@@ -27,18 +27,23 @@ document.addEventListener("DOMContentLoaded", function () {
           'Accept': 'application/json'
         }
       });
-
+    
+      const result = await response.json(); // ADICIONADO PARA VER A RESPOSTA
+      console.log("Resposta do Formspree:", result); // VER NO CONSOLE
+    
       if (response.ok) {
         status.textContent = "Mensagem enviada com sucesso!";
         status.className = "form-status success";
         form.reset();
       } else {
-        status.textContent = "Erro ao enviar. Tente novamente.";
+        status.textContent = result.error || "Erro ao enviar. Tente novamente.";
         status.className = "form-status error";
       }
     } catch (error) {
+      console.error("Erro no envio:", error);
       status.textContent = "Erro ao enviar. Tente novamente mais tarde.";
       status.className = "form-status error";
     }
+
   });
 });
