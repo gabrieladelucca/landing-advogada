@@ -10,33 +10,35 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     });
   });
 
+document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("meu-formulario");
-const status = document.getElementById("form-status");
+  const status = document.getElementById("form-status");
 
-form.addEventListener("submit", async function (e) {
-  e.preventDefault();
-  const data = new FormData(form);
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        'Accept': 'application/json'
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.textContent = "Mensagem enviada com sucesso!";
+        status.className = "form-status success";
+        form.reset();
+      } else {
+        status.textContent = "Erro ao enviar. Tente novamente.";
+        status.className = "form-status error";
       }
-    });
-
-    if (response.ok) {
-      status.textContent = "Mensagem enviada com sucesso!";
-      status.classList.add("success");
-      form.reset();
-    } else {
-      throw new Error();
+    } catch (error) {
+      status.textContent = "Erro ao enviar. Tente novamente mais tarde.";
+      status.className = "form-status error";
     }
-  } catch (error) {
-    status.textContent = "Erro ao enviar. Tente novamente mais tarde.";
-    status.classList.add("error");
-  }
+  });
 });
-
-  
