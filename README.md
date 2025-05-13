@@ -75,7 +75,7 @@ No `<head>`, inclua:
 
 Desenvolvido com 💻 por **Gabriela de Lucca**
 
-[LinkedIn]([https://www.linkedin.com/in/gabrieladelucca](https://www.linkedin.com/in/gabriela-de-lucca-moreira-9b641b143/)) • [Portfólio em construção](https://gabrieladelucca.github.io/portfolio-gabrieladelucca)
+[LinkedIn]([https://www.linkedin.com/in/gabrieladelucca](https://www.linkedin.com/in/gabriela-de-lucca-moreira-9b641b143/) • [Portfólio em construção](https://gabrieladelucca.github.io/portfolio-gabrieladelucca)
 
 ---
 
