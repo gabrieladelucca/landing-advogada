@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
   <title>Dra. Mariana Costa | Advocacia Criminal</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" type="images/favicon.png" href="favicon.png">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <meta name="description" content="Landing page profissional para advogadas criminalistas.">
   <meta name="keywords" content="advogada, criminalista, direito, serviços jurídicos">
   <meta name="author" content="Gabriela de Lucca">
@@ -28,7 +30,7 @@
   </header>
   
 
-  <section id="sobre" class="sobre">
+  <section id="sobre" class="sobre" data-aos="fade-up">
     <div class="container-sobre">
       <div class="sobre-img">
         <img src="https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=700&q=80" alt="Advogada">
@@ -49,7 +51,7 @@
   </section>
   
 
-  <section id="atuacao" class="atuacao">
+  <section id="atuacao" class="atuacao" data-aos="fade-up">
     <div class="container">
       <h2>Áreas de Atuação</h2>
       <div class="atuacao-grid">
@@ -78,7 +80,7 @@
   </section>
   
 
-  <section id="contato" class="contato">
+  <section id="contato" class="contato" data-aos="fade-up">
     <div class="container-contato">
       <h2>Entre em Contato</h2>
       <p>Caso precise de assessoria jurídica ou queira tirar dúvidas, envie uma mensagem abaixo:</p>
@@ -120,7 +122,10 @@
     </div>
   </footer>
   
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="script.js"></script>
   <a href="#" class="btn-topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></a>
 

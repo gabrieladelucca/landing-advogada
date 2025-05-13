@@ -50,4 +50,13 @@ window.addEventListener("scroll", () => {
   });
 });
 
+const btnTopo = document.querySelector('.btn-topo');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    btnTopo.style.display = 'block';
+  } else {
+    btnTopo.style.display = 'none';
+  }
+});
   
