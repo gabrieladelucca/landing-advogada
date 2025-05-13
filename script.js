@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const data = new FormData(form);
 
-    try {
+   try {
       const response = await fetch(form.action, {
         method: form.method,
         body: data,
@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     
-      const result = await response.json(); // ADICIONADO PARA VER A RESPOSTA
-      console.log("Resposta do Formspree:", result); // VER NO CONSOLE
+      const result = await response.json();
+      console.log("Resposta do Formspree:", result);
     
       if (response.ok) {
         status.textContent = "Mensagem enviada com sucesso!";
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       status.textContent = "Erro ao enviar. Tente novamente mais tarde.";
       status.className = "form-status error";
     }
+
 
   });
 });
