@@ -466,3 +466,30 @@ section.visible {
   opacity: 1;
   transform: translateY(0);
 }
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+
+  .sobre,
+  .atuacao,
+  .contato {
+    text-align: center;
+  }
+
+  form input,
+  form textarea {
+    width: 100%;
+  }
+}
